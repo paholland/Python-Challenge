@@ -1,9 +1,8 @@
-# holland
 import csv
 import os
 
 csv_path = os.path.join('Resources','election_data.csv')
-
+# pathout = os.path.join('Resources','Election Analysis')
 
 total_votes = 0
 winner_votes = 0
@@ -11,7 +10,7 @@ winner = ""
 candidate_options = []
 candidate_votes = {}
 
-#read th data
+#read the data
 with open(csv_path) as election_data:
 
     reader = csv.reader(election_data)
@@ -40,17 +39,32 @@ for candidate in candidate_votes:
     print(candidate)
     print(votes)
     print(Percentage)
-
+#print 
+print()
 print('Election Results')
 print('------------------------------')
-print(total_votes)
+print('Total Votes' + total_votes)
 print('------------------------------')
 
-
+for candidate_votes in candidate_votes:
+    print(candidate + '' + str(round(Percentage) + '%' + '('+ str(votes) + ')'))
 
 print('------------------------------')
 print('Winner: '+str(winner[0]))
+print('------------------------------')
 
-#    with open()file, 'w') as txt_file:
-#        txt_file,write('Election Results')
-#        txt_file.write 
+# outputing  files
+with open(pathout, 'w') as txt_file:
+    txt_file.write('Election Results')
+    txt_file.write('\n')
+    txt_file.write('------------------------------')
+    txt_file.write('\n')
+    txt_file.write
+    txt_file.write(str(winner))
+    txt_file.write('\n')
+    txt_file.write('------------------------------')
+    txt_file.write('\n')
+    txt_file.write('Winner: ' + str(winner [0]))
+    txt_file.write('\n')
+    txt_file.write('Total Votes' + str(votes)
+    #txt_file.close()
