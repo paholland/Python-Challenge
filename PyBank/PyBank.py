@@ -37,16 +37,16 @@ print('-------------------------------')
 print('Total Month: ' + len(month_count))
 print('Total: ' + '$' + str(sum(profit)))
 print('Average change: ' + '$' + (profit_change_avg))
-print(f'Greatest Increase in Profits: {profit_change.index(max(profit_change))+ 1]) $ max_inc}
-print(f'Greatest Decrease in Profits: {[profit_change.index(min(profit_change))+ 1]) $ max_decr}
+print(f'Greatest Increase in Profits: {[profit_change.index(max(profit_change))+ 1)] $ max_inc}')
+print(f'Greatest Decrease in Profits: {[profit_change.index(min(profit_change))+ 1)] $ max_decr}')
 
 #writing 
 text_file = open(output.txt, 'w')
 text_file.write('Financial Analysis' + '\n')
 text_file.write('---------------------------------------' + '\n')
-text_file.write('Total Month  + len(month_count))
+text_file.write('Total Month'  + len(month_count))
 text_file.write('Total: ' + '$' + str(sum(profit))
 text_file.write('Average change: ' + '$' + str(profit_change_avg))
-text_file.write(f'Greatest Increase in Profits: {[profit_change.index(max(profit_change))+ 1]) $ max_inc}
-text_file.write(f'Greatest Increase in Profits: {[profit_change.index(min(profit_change))+ 1]) $ max_decr}
+text_file.write(f'Greatest Increase in Profits: {[profit_change.index(max(profit_change))+ 1)] $ max_inc}')
+text_file.write(f'Greatest Decrease in Profits: {[profit_change.index(min(profit_change))+ 1)] $ max_decr}')
 text_file.close()
