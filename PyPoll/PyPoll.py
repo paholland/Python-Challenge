@@ -36,9 +36,7 @@ for candidate in candidate_votes:
         winner_votes = votes
         winner = candidate
     Percentage = float(votes)/float(total_votes)*100
-    print(candidate)
-    print(votes)
-    print(Percentage)
+ 
 #print 
 print()
 print('Election Results')
@@ -48,11 +46,11 @@ print('------------------------------')
 
 for candidate in candidate_votes:
     votes = candidate_votes[candidate]
-    Percentage = float(votes)/float(total_votes)*100
-    print(candidate + ' ' + str(round(Percentage)) + '% ' + '('+ str(votes) + ')')
+    Percentage = round(float(votes)/float(total_votes)*100,3)
+    print(candidate + ' ' + str(Percentage) + '% ' + '('+ str(votes) + ')')
 
 print('------------------------------')
-print('Winner: '+str(winner[0]))
+print('Winner: '+str(winner))
 print('------------------------------')
 
 # outputing  files
@@ -66,7 +64,7 @@ with open(pathout, 'w') as txt_file:
     txt_file.write('\n')
     txt_file.write('------------------------------')
     txt_file.write('\n')
-    txt_file.write('Winner: ' + str(winner [0]))
+    txt_file.write('Winner: ' + str(winner))
     txt_file.write('\n')
     txt_file.write('Total Votes' + str(votes)
     #txt_file.close()
