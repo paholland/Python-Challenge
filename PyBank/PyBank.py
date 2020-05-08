@@ -23,7 +23,7 @@ with open(csv_path) as csv_file:
 
 #??????????????????????????????????
     for i in range(len(profit)-1):
-        profit_change.append(profit_change[i+ 1] - profit[i])
+        profit_change.append(profit[i+ 1] - profit[i])
 
 #avg profit/loss change
 
@@ -35,9 +35,9 @@ with open(csv_path) as csv_file:
 #print 
 print('Financial Analysis')
 print('-------------------------------')
-print('Total Month: ' + len(month_count))
+print('Total Month: ' + str(len(month_count)))
 print('Total: ' + '$' + str(sum(profit)))
-print('Average change: ' + '$' + (profit_change_avg))
+print('Average change: ' + '$' + str(profit_change_avg))
 print(f'Greatest Increase in Profits: {[profit_change.index(max(profit_change))+ 1]} $ { max_inc}')
 print(f'Greatest Decrease in Profits: {[profit_change.index(min(profit_change))+ 1]} $ {min_decr}')
 
@@ -45,7 +45,7 @@ print(f'Greatest Decrease in Profits: {[profit_change.index(min(profit_change))+
 text_file = open('output.txt', 'w')
 text_file.write('Financial Analysis' + '\n')
 text_file.write('---------------------------------------' + '\n')
-text_file.write('Total Month'  + len(month_count))
+text_file.write('Total Month'  + str(len(month_count)))
 text_file.write('Total: ' + '$' + str(sum(profit)))
 text_file.write('Average change: ' + '$' + str(profit_change_avg))
 text_file.write(f'Greatest Increase in Profits: {[profit_change.index(max(profit_change))+ 1]} $ {max_inc}')
