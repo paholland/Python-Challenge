@@ -2,7 +2,7 @@ import csv
 import os
 
 csv_path = os.path.join('Resources','election_data.csv')
-# pathout = os.path.join('Resources','Election Analysis')
+pathout = os.path.join('Resources','election_results.txt')
 
 total_votes = 0
 winner_votes = 0
@@ -43,11 +43,13 @@ for candidate in candidate_votes:
 print()
 print('Election Results')
 print('------------------------------')
-print('Total Votes' + total_votes)
+print('Total Votes: ' + str(total_votes))
 print('------------------------------')
 
-for candidate_votes in candidate_votes:
-    print(candidate + '' + str(round(Percentage) + '%' + '('+ str(votes) + ')'))
+for candidate in candidate_votes:
+    votes = candidate_votes[candidate]
+    Percentage = float(votes)/float(total_votes)*100
+    print(candidate + ' ' + str(round(Percentage)) + '% ' + '('+ str(votes) + ')')
 
 print('------------------------------')
 print('Winner: '+str(winner[0]))
@@ -68,3 +70,4 @@ with open(pathout, 'w') as txt_file:
     txt_file.write('\n')
     txt_file.write('Total Votes' + str(votes)
     #txt_file.close()
+    )
