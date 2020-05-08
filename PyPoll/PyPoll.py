@@ -26,8 +26,7 @@ with open(csv_path) as election_data:
         if candidate_name not in candidate_options:
             candidate_options.append(candidate_name)
             candidate_votes[candidate_name]=0
-            # print(candidate_name)
-            # print(candidate_votes[candidate_name])
+    
         candidate_votes[candidate_name]= candidate_votes[candidate_name] +1
 
 for candidate in candidate_votes:
@@ -47,7 +46,7 @@ print('------------------------------')
 for candidate in candidate_votes:
     votes = candidate_votes[candidate]
     Percentage = round(float(votes)/float(total_votes)*100,3)
-    print(candidate + ' ' + str(Percentage) + '% ' + '('+ str(votes) + ')')
+    print(candidate + ': ' + str(Percentage) + '% ' + '('+ str(votes) + ')')
 
 print('------------------------------')
 print('Winner: '+str(winner))
@@ -66,6 +65,5 @@ with open(pathout, 'w') as txt_file:
     txt_file.write('\n')
     txt_file.write('Winner: ' + str(winner))
     txt_file.write('\n')
-    txt_file.write('Total Votes' + str(votes)
-    #txt_file.close()
+    txt_file.write('Total Votes: ' + str(votes)
     )
