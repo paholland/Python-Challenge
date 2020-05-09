@@ -63,12 +63,12 @@ with open(pathout, 'w') as txt_file:
     txt_file.write('------------------------------')
     txt_file.write('\n')
 
-for candidate in candidate_votes:
-    votes = candidate_votes[candidate]
-    Percentage = round(float(votes)/float(total_votes)*100,3)
-    txt_file.write(candidate + ': ' + str(Percentage) + '% ' + '('+ str(votes) + ')')
-    #txt_file.write(candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")")
-    
+    for candidate in candidate_votes:
+        votes = candidate_votes[candidate]
+        Percentage = round(float(votes)/float(total_votes)*100,3)
+        txt_file.write(candidate + ': ' + str(Percentage) + '% ' + '('+ str(votes) + ')')
+        txt_file.write('\n')
+
     txt_file.write('\n')
     txt_file.write('------------------------------')
     txt_file.write('\n')
